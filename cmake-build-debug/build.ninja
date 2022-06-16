@@ -49,12 +49,12 @@ cmake_ninja_workdir = C$:/Users/znnxzz/CLionProjects/sdl-app/cmake-build-debug/
 
 build cmake_object_order_depends_target_sdl_app: phony || CMakeFiles/sdl_app.dir
 
-build CMakeFiles/sdl_app.dir/main.cpp.obj: CXX_COMPILER__sdl_app_Debug C$:/Users/znnxzz/CLionProjects/sdl-app/main.cpp || cmake_object_order_depends_target_sdl_app
-  DEP_FILE = CMakeFiles\sdl_app.dir\main.cpp.obj.d
+build CMakeFiles/sdl_app.dir/src/main.cpp.obj: CXX_COMPILER__sdl_app_Debug C$:/Users/znnxzz/CLionProjects/sdl-app/src/main.cpp || cmake_object_order_depends_target_sdl_app
+  DEP_FILE = CMakeFiles\sdl_app.dir\src\main.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Users/znnxzz/CLionProjects/sdl-app/SDL2-win/x86_64-w64-mingw32/include/SDL2
+  INCLUDES = -IC:/Users/znnxzz/CLionProjects/sdl-app/SDL2-win/include/SDL2
   OBJECT_DIR = CMakeFiles\sdl_app.dir
-  OBJECT_FILE_DIR = CMakeFiles\sdl_app.dir
+  OBJECT_FILE_DIR = CMakeFiles\sdl_app.dir\src
 
 
 # =============================================================================
@@ -64,10 +64,10 @@ build CMakeFiles/sdl_app.dir/main.cpp.obj: CXX_COMPILER__sdl_app_Debug C$:/Users
 #############################################
 # Link the executable sdl_app.exe
 
-build sdl_app.exe: CXX_EXECUTABLE_LINKER__sdl_app_Debug CMakeFiles/sdl_app.dir/main.cpp.obj
+build sdl_app.exe: CXX_EXECUTABLE_LINKER__sdl_app_Debug CMakeFiles/sdl_app.dir/src/main.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lmingw32  -lSDL2main  -lSDL2  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/Users/znnxzz/CLionProjects/sdl-app/SDL2-win/x86_64-w64-mingw32/lib
+  LINK_LIBRARIES = -lmingw32  -lSDL2main  -lSDL2  -lSDL2_image  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_PATH = -LC:/Users/znnxzz/CLionProjects/sdl-app/SDL2-win/lib
   OBJECT_DIR = CMakeFiles\sdl_app.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
