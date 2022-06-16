@@ -1,0 +1,5 @@
+# ninja log v5
+1	243	6770581039606117	build.ninja	bb6cae1ed8a2f78a
+3	522	6770581004887142	CMakeFiles/sdl_app.dir/main.cpp.obj	646cba5c17c7709e
+1	514	6770556751357839	CMakeFiles/sdl-app.dir/main.cpp.obj	4c3928bd96274d0d
+522	654	6770581006176468	sdl_app.exe	77f9cba9ce2f5268
