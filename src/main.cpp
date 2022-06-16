@@ -78,7 +78,7 @@ bool loadMedia()
     bool success = true;
 
     //Load PNG surface
-    gPNGSurface = loadSurface( "C:\\Users\\znnxzz\\CLionProjects\\sdl-app\\res\\loaded.png" );
+    gPNGSurface = loadSurface( "../res/loaded.png" );
     if( gPNGSurface == NULL )
     {
         printf( "Failed to load PNG image!\n" );
