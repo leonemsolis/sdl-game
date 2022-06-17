@@ -14,7 +14,7 @@ ENDIF()
 include_directories(${SDL2_INCLUDE_DIR})
 link_directories(${SDL2_LIB_DIR})
 
-add_executable(sdl_app src/main.cpp)
+add_executable(sdl_app src/main.cpp src/SceneBase.cpp src/Game/Game.cpp src/Game/Game.h)
 
 target_link_libraries(${PROJECT_NAME} mingw32 SDL2main SDL2 SDL2_image)
 
