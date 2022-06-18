@@ -15,7 +15,7 @@ IF(APPLE)
 ENDIF()
 
 IF(MINGW)
-    set(SDL2_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/SDL2-win/include)
+    set(SDL2_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/SDL2-win/include/SDL2)
     set(SDL2_LIB_DIR ${PROJECT_SOURCE_DIR}/SDL2-win/lib)
     include_directories(${SDL2_INCLUDE_DIR})
     link_directories(${SDL2_LIB_DIR})
