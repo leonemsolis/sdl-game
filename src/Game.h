@@ -1,7 +1,9 @@
 #ifndef SDL_APP_GAME_H
 #define SDL_APP_GAME_H
 
-#include "SDL.h"
+#include <SDL.h>
+#include <SDL_image.h>
+#include "Scene.h"
 
 class Game {
 public:
@@ -10,12 +12,13 @@ public:
     void Run();
 private:
     void Initialize();
-    void Update();
+    void GameLoop();
     void Destroy();
-    SDL_Surface* screenSurface;
-    SDL_Surface* imageSurface;
-    SDL_Window* window;
     bool running;
+    Scene* currentScene;
+
+    SDL_Window* window;
+    SDL_Renderer* renderer;
 };
 
 

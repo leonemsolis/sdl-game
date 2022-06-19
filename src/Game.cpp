@@ -2,15 +2,16 @@
 
 #include <iostream>
 #include "Input.h"
+#include "GameScene.h"
+#include "AssetManager.h"
 
 void Game::Run() {
     this->Initialize();
-    this->Update();
+    this->GameLoop();
     this->Destroy();
 }
 
 void Game::Initialize() {
-    //Initialization flag
     running = true;
 
     if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
@@ -18,6 +19,12 @@ void Game::Initialize() {
         printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
         running = false;
         return;
+    }
+
+    //Set texture filtering to linear
+    if( !SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" ) )
+    {
+        printf( "Warning: Linear texture filtering not enabled!" );
     }
 
     window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
@@ -28,19 +35,32 @@ void Game::Initialize() {
         return;
     }
 
-    screenSurface = SDL_GetWindowSurface( window );
-
-    imageSurface = SDL_LoadBMP( "../res/x.bmp" );
-    if( imageSurface == NULL )
-    {
-        printf( "Unable to load image %s! SDL Error: %s\n", "../res/x.bmp", SDL_GetError() );
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    if(renderer == NULL) {
+        printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
         running = false;
+        return;
     }
+
+    SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
+    int imgFlags = IMG_INIT_PNG;
+    if(!(IMG_Init(imgFlags) & imgFlags)) {
+        printf("SDL_image could not be initialized! SDL_image Error: %s\n", SDL_GetError());
+        running = false;
+        return;
+    }
+
+    if(!AssetManager::Instance()->Initialize(renderer)) {
+        printf("AssetManager failed to load\n");
+        running = false;
+        return;
+    }
+
+    currentScene = new GameScene();
 }
 
-void Game::Update() {
-    SDL_Event e;
-
+void Game::GameLoop() {
     while( running )
     {
         Input::Instance().Update();
@@ -49,17 +69,26 @@ void Game::Update() {
             running = false;
         }
 
-        SDL_BlitSurface( imageSurface, NULL, screenSurface, NULL );
-        SDL_UpdateWindowSurface( window );
+        SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+        SDL_RenderClear(renderer);
+
+        currentScene->Update(renderer);
+
+        SDL_RenderPresent(renderer);
     }
 }
 
 void Game::Destroy() {
-    SDL_FreeSurface( imageSurface );
-    imageSurface = NULL;
+    delete currentScene;
+
+    AssetManager::Instance()->Destroy();
+
+    SDL_DestroyRenderer(renderer);
+    renderer = NULL;
 
     SDL_DestroyWindow( window );
     window = NULL;
 
+    IMG_Quit();
     SDL_Quit();
 }

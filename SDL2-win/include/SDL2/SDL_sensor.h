@@ -275,7 +275,7 @@ extern DECLSPEC int SDLCALL SDL_SensorGetData(SDL_Sensor * sensor, float *data, 
 extern DECLSPEC void SDLCALL SDL_SensorClose(SDL_Sensor * sensor);
 
 /**
- * Update the current state of the open sensors.
+ * GameLoop the current state of the open sensors.
  *
  * This is called automatically by the event loop if sensor events are
  * enabled.

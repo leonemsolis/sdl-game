@@ -2049,7 +2049,7 @@ extern DECLSPEC int SDLCALL SDL_GL_SetSwapInterval(int interval);
 extern DECLSPEC int SDLCALL SDL_GL_GetSwapInterval(void);
 
 /**
- * Update a window with OpenGL rendering.
+ * GameLoop a window with OpenGL rendering.
  *
  * This is used with double-buffered OpenGL contexts, which are the default.
  *
