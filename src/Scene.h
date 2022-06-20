@@ -6,7 +6,8 @@
 #define SDL_APP_SCENE_H
 class Scene {
 public:
-    virtual void Update(SDL_Renderer* renderer) = 0;
+    virtual void Update() = 0;
+    virtual void Draw(SDL_Renderer* renderer) = 0;
     virtual ~Scene(){};
 };
 

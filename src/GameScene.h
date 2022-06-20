@@ -10,13 +10,14 @@
 class GameScene: public Scene {
 public:
     GameScene();
-    void Update(SDL_Renderer *renderer);
-    ~GameScene();
+    void Update() override;
+    void Draw(SDL_Renderer *renderer) override;
+    ~GameScene() override;
 
 private:
     Sprite* testSprite;
-    int x;
-    int y;
+    float x;
+    float y;
 };
 
 

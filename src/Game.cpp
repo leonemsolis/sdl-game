@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "GameScene.h"
 #include "AssetManager.h"
+#include "Constants.h"
 
 void Game::Run() {
     this->Initialize();
@@ -61,19 +62,27 @@ void Game::Initialize() {
 }
 
 void Game::GameLoop() {
+    Uint64 previous = SDL_GetTicks64();
+    Uint64 lag = 0;
     while( running )
     {
-        Input::Instance().Update();
+        Uint64 current = SDL_GetTicks64();
+        Uint64 elapsed = current - previous;
+        previous = current;
+        lag += elapsed;
 
-        if(Input::Instance().CheckEvent(QUIT)) {
-            running = false;
+        while(lag >= FRAME_TARGET_TIME) {
+            Input::Instance().Update();
+            if(Input::Instance().CheckEvent(QUIT)) {
+                running = false;
+            }
+            currentScene->Update();
+            lag -= FRAME_TARGET_TIME;
         }
 
         SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear(renderer);
-
-        currentScene->Update(renderer);
-
+        currentScene->Draw(renderer);
         SDL_RenderPresent(renderer);
     }
 }

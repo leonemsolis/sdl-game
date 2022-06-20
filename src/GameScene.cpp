@@ -13,12 +13,16 @@ GameScene::GameScene() {
     y = 10;
 }
 
-void GameScene::Update(SDL_Renderer *renderer) {
-    if(Input::Instance().GetKey(SDL_SCANCODE_LEFT)) x--;
-    if(Input::Instance().GetKey(SDL_SCANCODE_RIGHT)) x++;
-    if(Input::Instance().GetKey(SDL_SCANCODE_UP)) y--;
-    if(Input::Instance().GetKey(SDL_SCANCODE_DOWN)) y++;
-    testSprite->Draw(renderer, x, y);
+void GameScene::Update() {
+    float delta = 10;
+    if(Input::Instance().GetKey(SDL_SCANCODE_LEFT)) x-=delta;
+    if(Input::Instance().GetKey(SDL_SCANCODE_RIGHT)) x+=delta;
+    if(Input::Instance().GetKey(SDL_SCANCODE_UP)) y-=delta;
+    if(Input::Instance().GetKey(SDL_SCANCODE_DOWN)) y+=delta;
+}
+
+void GameScene::Draw(SDL_Renderer *renderer) {
+    testSprite->Draw(renderer, (int)x, (int)y);
 }
 
 GameScene::~GameScene() {
