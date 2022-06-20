@@ -59,7 +59,7 @@ typedef struct
 {
     Uint32 flags;       /**< ::SDL_MessageBoxButtonFlags */
     int buttonid;       /**< User defined button id (value returned via SDL_ShowMessageBox) */
-    const char * text;  /**< The UTF-8 button text */
+    const char * text;  /**< The UTF-8 button textValue */
 } SDL_MessageBoxButtonData;
 
 /**
@@ -89,14 +89,14 @@ typedef struct
 } SDL_MessageBoxColorScheme;
 
 /**
- * MessageBox structure containing title, text, window, etc.
+ * MessageBox structure containing title, textValue, window, etc.
  */
 typedef struct
 {
     Uint32 flags;                       /**< ::SDL_MessageBoxFlags */
     SDL_Window *window;                 /**< Parent window, can be NULL */
     const char *title;                  /**< UTF-8 title */
-    const char *message;                /**< UTF-8 message text */
+    const char *message;                /**< UTF-8 message textValue */
 
     int numbuttons;
     const SDL_MessageBoxButtonData *buttons;
@@ -127,7 +127,7 @@ typedef struct
  * concern, check the return value from this function and fall back to writing
  * to stderr if you can.
  *
- * \param messageboxdata the SDL_MessageBoxData structure with title, text and
+ * \param messageboxdata the SDL_MessageBoxData structure with title, textValue and
  *                       other options
  * \param buttonid the pointer to which user id of hit button should be copied
  * \returns 0 on success or a negative error code on failure; call
@@ -169,8 +169,8 @@ extern DECLSPEC int SDLCALL SDL_ShowMessageBox(const SDL_MessageBoxData *message
  * to stderr if you can.
  *
  * \param flags an SDL_MessageBoxFlags value
- * \param title UTF-8 title text
- * \param message UTF-8 message text
+ * \param title UTF-8 title textValue
+ * \param message UTF-8 message textValue
  * \param window the parent window, or NULL for no parent
  * \returns 0 on success or a negative error code on failure; call
  *          SDL_GetError() for more information.

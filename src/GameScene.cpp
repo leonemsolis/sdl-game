@@ -7,7 +7,9 @@
 #include "GameScene.h"
 #include "Input.h"
 
-GameScene::GameScene() {
+GameScene::GameScene(SDL_Renderer* renderer) {
+    auto color = SDL_Color{0, 0, 0, 140};
+    text = new Text("Hello world", color, renderer);
     testSprite = new Sprite(2);
     x = 10;
     y = 10;
@@ -22,9 +24,10 @@ void GameScene::Update() {
 }
 
 void GameScene::Draw(SDL_Renderer *renderer) {
+    text->Draw(renderer, 20, 20);
     testSprite->Draw(renderer, (int)x, (int)y);
 }
 
 GameScene::~GameScene() {
-
+    delete text;
 }

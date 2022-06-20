@@ -9,6 +9,8 @@
 AssetManager* AssetManager::instance = nullptr;
 
 AssetManager::AssetManager() {
+    texture = NULL;
+    font = NULL;
     initialized = false;
 }
 
@@ -40,12 +42,20 @@ bool AssetManager::Initialize(SDL_Renderer* renderer) {
 
     SDL_FreeSurface( loadedSurface );
 
+    font = TTF_OpenFont("../res/font.TTF", 28);
+    if(font == NULL) {
+        printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
+        return false;
+    }
+
     initialized = true;
     return initialized;
 }
 
 void AssetManager::Destroy() {
     if(!initialized) return;
+    TTF_CloseFont(font);
+    font = NULL;
     SDL_DestroyTexture(texture);
     texture = NULL;
     initialized = false;
@@ -54,4 +64,9 @@ void AssetManager::Destroy() {
 SDL_Texture *AssetManager::GetTexture() {
     if(!initialized) return NULL;
     return texture;
+}
+
+TTF_Font *AssetManager::GetFont() {
+    if(!initialized) return NULL;
+    return font;
 }

@@ -143,7 +143,7 @@ typedef struct SDL_GameControllerButtonBind
  * specified will be ignored (i.e. mappings for Linux will be ignored in
  * Windows, etc).
  *
- * This function will load the text database entirely in memory before
+ * This function will load the textValue database entirely in memory before
  * processing it, so take this into consideration if you are in a memory
  * constrained environment.
  *

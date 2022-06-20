@@ -190,7 +190,7 @@ typedef struct SDL_RWops
  * letter and the "+" sign for the mixed modes ("rb+", "wb+", "ab+").
  * Additional characters may follow the sequence, although they should have no
  * effect. For example, "t" is sometimes appended to make explicit the file is
- * a text file.
+ * a textValue file.
  *
  * This function supports Unicode filenames, but they must be encoded in UTF-8
  * format, regardless of the underlying operating system.

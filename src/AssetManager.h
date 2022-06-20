@@ -6,13 +6,17 @@
 #define SDL_APP_ASSETMANAGER_H
 
 #include <SDL.h>
+#include <SDL_ttf.h>
+#include <string>
 
 class AssetManager {
 private:
     AssetManager();
     static AssetManager* instance;
-    SDL_Texture* texture;
     bool initialized;
+
+    SDL_Texture* texture;
+    TTF_Font* font;
 public:
     // Prevent copying
     AssetManager(AssetManager &other) = delete;
@@ -22,6 +26,7 @@ public:
     bool Initialize(SDL_Renderer* renderer);
     void Destroy();
     SDL_Texture* GetTexture();
+    TTF_Font* GetFont();
 };
 
 

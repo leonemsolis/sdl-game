@@ -218,7 +218,7 @@ extern "C" {
  * - "Android"
  *
  * \returns the name of the platform. If the correct platform name is not
- *          available, returns a string beginning with the text "Unknown".
+ *          available, returns a string beginning with the textValue "Unknown".
  *
  * \since This function is available since SDL 2.0.0.
  */

@@ -414,7 +414,7 @@ extern DECLSPEC SDL_bool SDLCALL SDL_AndroidRequestPermission(const char *permis
  *
  * https://developer.android.com/reference/android/view/Gravity
  *
- * \param message text message to be shown
+ * \param message textValue message to be shown
  * \param duration 0=short, 1=long
  * \param gravity where the notification should appear on the screen.
  * \param xoffset set this parameter only when gravity >=0

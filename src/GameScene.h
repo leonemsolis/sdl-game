@@ -6,16 +6,18 @@
 #define SDL_APP_GAMESCENE_H
 #include "Scene.h"
 #include "Sprite.h"
+#include "Text.h"
 
 class GameScene: public Scene {
 public:
-    GameScene();
+    GameScene(SDL_Renderer* renderer);
     void Update() override;
     void Draw(SDL_Renderer *renderer) override;
     ~GameScene() override;
 
 private:
     Sprite* testSprite;
+    Text* text;
     float x;
     float y;
 };

@@ -5,6 +5,7 @@
 #include "GameScene.h"
 #include "AssetManager.h"
 #include "Constants.h"
+#include <SDL_ttf.h>
 
 void Game::Run() {
     this->Initialize();
@@ -52,13 +53,19 @@ void Game::Initialize() {
         return;
     }
 
+    if(TTF_Init() == -1) {
+        printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
+        running = false;
+        return;
+    }
+
     if(!AssetManager::Instance()->Initialize(renderer)) {
         printf("AssetManager failed to load\n");
         running = false;
         return;
     }
 
-    currentScene = new GameScene();
+    currentScene = new GameScene(renderer);
 }
 
 void Game::GameLoop() {
@@ -97,7 +104,7 @@ void Game::Destroy() {
 
     SDL_DestroyWindow( window );
     window = NULL;
-
+    TTF_Quit();
     IMG_Quit();
     SDL_Quit();
 }

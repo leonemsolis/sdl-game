@@ -232,9 +232,9 @@ extern DECLSPEC const char *SDLCALL SDL_GetKeyName(SDL_Keycode key);
 extern DECLSPEC SDL_Keycode SDLCALL SDL_GetKeyFromName(const char *name);
 
 /**
- * Start accepting Unicode text input events.
+ * Start accepting Unicode textValue input events.
  *
- * This function will start accepting Unicode text input events in the focused
+ * This function will start accepting Unicode textValue input events in the focused
  * SDL window, and start emitting SDL_TextInputEvent (SDL_TEXTINPUT) and
  * SDL_TextEditingEvent (SDL_TEXTEDITING) events. Please use this function in
  * pair with SDL_StopTextInput().
@@ -249,9 +249,9 @@ extern DECLSPEC SDL_Keycode SDLCALL SDL_GetKeyFromName(const char *name);
 extern DECLSPEC void SDLCALL SDL_StartTextInput(void);
 
 /**
- * Check whether or not Unicode text input events are enabled.
+ * Check whether or not Unicode textValue input events are enabled.
  *
- * \returns SDL_TRUE if text input events are enabled else SDL_FALSE.
+ * \returns SDL_TRUE if textValue input events are enabled else SDL_FALSE.
  *
  * \since This function is available since SDL 2.0.0.
  *
@@ -260,7 +260,7 @@ extern DECLSPEC void SDLCALL SDL_StartTextInput(void);
 extern DECLSPEC SDL_bool SDLCALL SDL_IsTextInputActive(void);
 
 /**
- * Stop receiving any text input events.
+ * Stop receiving any textValue input events.
  *
  * \since This function is available since SDL 2.0.0.
  *
@@ -286,14 +286,14 @@ extern DECLSPEC void SDLCALL SDL_ClearComposition(void);
 extern DECLSPEC SDL_bool SDLCALL SDL_IsTextInputShown(void);
 
 /**
- * Set the rectangle used to type Unicode text inputs.
+ * Set the rectangle used to type Unicode textValue inputs.
  *
  * Note: If you want use system native IME window, try to set hint
  * **SDL_HINT_IME_SHOW_UI** to **1**, otherwise this function won't give you
  * any feedback.
  *
  * \param rect the SDL_Rect structure representing the rectangle to receive
- *             text (ignored if NULL)
+ *             textValue (ignored if NULL)
  *
  * \since This function is available since SDL 2.0.0.
  *

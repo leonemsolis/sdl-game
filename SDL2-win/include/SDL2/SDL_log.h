@@ -357,7 +357,7 @@ extern DECLSPEC void SDLCALL SDL_LogMessageV(int category,
 /**
  * The prototype for the log output callback function.
  *
- * This function is called by SDL when there is new text to be logged.
+ * This function is called by SDL when there is new textValue to be logged.
  *
  * \param userdata what was passed as `userdata` to SDL_LogSetOutputFunction()
  * \param category the category of the message

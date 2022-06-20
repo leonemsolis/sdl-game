@@ -559,14 +559,14 @@ extern "C" {
 #define SDL_HINT_IDLE_TIMER_DISABLED "SDL_IOS_IDLE_TIMER_DISABLED"
 
 /**
- * \brief A variable to control whether certain IMEs should handle text editing internally instead of sending SDL_TEXTEDITING events.
+ * \brief A variable to control whether certain IMEs should handle textValue editing internally instead of sending SDL_TEXTEDITING events.
  *
  * The variable can be set to the following values:
  *   "0"       - SDL_TEXTEDITING events are sent, and it is the application's
- *               responsibility to render the text from these events and 
- *               differentiate it somehow from committed text. (default)
+ *               responsibility to render the textValue from these events and
+ *               differentiate it somehow from committed textValue. (default)
  *   "1"       - If supported by the IME then SDL_TEXTEDITING events are not sent, 
- *               and text that is being composed will be rendered in its own UI.
+ *               and textValue that is being composed will be rendered in its own UI.
  */
 #define SDL_HINT_IME_INTERNAL_EDITING "SDL_IME_INTERNAL_EDITING"
 
@@ -580,8 +580,8 @@ extern "C" {
 #define SDL_HINT_IME_SHOW_UI "SDL_IME_SHOW_UI"
 
 /**
- * \brief A variable to control if extended IME text support is enabled.
- * If enabled then SDL_TextEditingExtEvent will be issued if the text would be truncated otherwise.
+ * \brief A variable to control if extended IME textValue support is enabled.
+ * If enabled then SDL_TextEditingExtEvent will be issued if the textValue would be truncated otherwise.
  * Additionally SDL_TextInputEvent will be dispatched multiple times so that it is not truncated.
  *
  * The variable can be set to the following values:
@@ -1852,15 +1852,15 @@ extern "C" {
  */
 #define SDL_HINT_WINRT_HANDLE_BACK_BUTTON "SDL_WINRT_HANDLE_BACK_BUTTON"
 
-/** \brief Label text for a WinRT app's privacy policy link
+/** \brief Label textValue for a WinRT app's privacy policy link
  *
  *  Network-enabled WinRT apps must include a privacy policy.  On Windows 8, 8.1, and RT,
  *  Microsoft mandates that this policy be available via the Windows Settings charm.
- *  SDL provides code to add a link there, with its label text being set via the
+ *  SDL provides code to add a link there, with its label textValue being set via the
  *  optional hint, SDL_HINT_WINRT_PRIVACY_POLICY_LABEL.
  *
  *  Please note that a privacy policy's contents are not set via this hint.  A separate
- *  hint, SDL_HINT_WINRT_PRIVACY_POLICY_URL, is used to link to the actual text of the
+ *  hint, SDL_HINT_WINRT_PRIVACY_POLICY_URL, is used to link to the actual textValue of the
  *  policy.
  *
  *  The contents of this hint should be encoded as a UTF8 string.
@@ -1889,7 +1889,7 @@ extern "C" {
  *  The default value is "", which will prevent SDL from adding a privacy policy
  *  link to the Settings charm.  This hint should only be set during app init.
  *
- *  The label text of an app's "Privacy Policy" link may be customized via another
+ *  The label textValue of an app's "Privacy Policy" link may be customized via another
  *  hint, SDL_HINT_WINRT_PRIVACY_POLICY_LABEL.
  *
  *  Please note that on Windows Phone, Microsoft does not provide standard UI
