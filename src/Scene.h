@@ -8,7 +8,7 @@ class Scene {
 public:
     virtual void Update() = 0;
     virtual void Draw(SDL_Renderer* renderer) = 0;
-    virtual ~Scene(){};
+    virtual ~Scene()= default;;
 };
 
 
