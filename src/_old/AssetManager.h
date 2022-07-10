@@ -5,7 +5,7 @@
 #ifndef SDL_APP_ASSETMANAGER_H
 #define SDL_APP_ASSETMANAGER_H
 
-#include <SDL.h>
+#include "SDL.h"
 
 class AssetManager {
 private:

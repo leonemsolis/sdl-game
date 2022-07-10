@@ -2,7 +2,7 @@
 // Created by znnxz on 19-Jun-22.
 //
 
-#include <SDL.h>
+#include "SDL.h"
 #include <iostream>
 #include "GameScene.h"
 #include "Input.h"

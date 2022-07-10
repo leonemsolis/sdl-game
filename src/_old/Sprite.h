@@ -5,7 +5,7 @@
 #ifndef SDL_APP_SPRITE_H
 #define SDL_APP_SPRITE_H
 
-#include <SDL.h>
+#include "SDL.h"
 
 class Sprite {
 public:

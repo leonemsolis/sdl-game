@@ -342,7 +342,7 @@ extern DECLSPEC void SDLCALL SDL_AndroidBackButton(void);
  * applications.
  *
  * Your internal storage path is typically:
- * `/data/data/your.app.package/files`.
+ * `/data/data/your._old.package/files`.
  *
  * \returns the path used for internal storage or NULL on failure; call
  *          SDL_GetError() for more information.
@@ -377,7 +377,7 @@ extern DECLSPEC int SDLCALL SDL_AndroidGetExternalStorageState(void);
  * to by other applications.
  *
  * Your external storage path is typically:
- * `/storage/sdcard0/Android/data/your.app.package/files`.
+ * `/storage/sdcard0/Android/data/your._old.package/files`.
  *
  * \returns the path used for external storage for this application on success
  *          or NULL on failure; call SDL_GetError() for more information.
@@ -447,20 +447,20 @@ extern DECLSPEC int SDLCALL SDL_AndroidSendMessage(Uint32 command, int param);
  */
 typedef enum
 {
-    /** \brief The installed app's root directory.
+    /** \brief The installed _old's root directory.
         Files here are likely to be read-only. */
     SDL_WINRT_PATH_INSTALLED_LOCATION,
 
-    /** \brief The app's local data store.  Files may be written here */
+    /** \brief The _old's local data store.  Files may be written here */
     SDL_WINRT_PATH_LOCAL_FOLDER,
 
-    /** \brief The app's roaming data store.  Unsupported on Windows Phone.
+    /** \brief The _old's roaming data store.  Unsupported on Windows Phone.
         Files written here may be copied to other machines via a network
         connection.
     */
     SDL_WINRT_PATH_ROAMING_FOLDER,
 
-    /** \brief The app's temporary data store.  Unsupported on Windows Phone.
+    /** \brief The _old's temporary data store.  Unsupported on Windows Phone.
         Files written here may be deleted at any time. */
     SDL_WINRT_PATH_TEMP_FOLDER
 } SDL_WinRT_Path;
@@ -492,7 +492,7 @@ typedef enum
  * true on Windows Phone. Check the documentation for the given SDL_WinRT_Path
  * for more information on which path types are supported where.
  *
- * Documentation on most app-specific path types on WinRT can be found on
+ * Documentation on most _old-specific path types on WinRT can be found on
  * MSDN, at the URL:
  *
  * https://msdn.microsoft.com/en-us/library/windows/apps/hh464917.aspx
@@ -515,7 +515,7 @@ extern DECLSPEC const wchar_t * SDLCALL SDL_WinRTGetFSPathUNICODE(SDL_WinRT_Path
  * true on Windows Phone. Check the documentation for the given SDL_WinRT_Path
  * for more information on which path types are supported where.
  *
- * Documentation on most app-specific path types on WinRT can be found on
+ * Documentation on most _old-specific path types on WinRT can be found on
  * MSDN, at the URL:
  *
  * https://msdn.microsoft.com/en-us/library/windows/apps/hh464917.aspx

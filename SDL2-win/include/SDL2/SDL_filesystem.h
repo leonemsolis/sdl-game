@@ -44,19 +44,19 @@ extern "C" {
  * startup and save the string if you need it.
  *
  * **Mac OS X and iOS Specific Functionality**: If the application is in a
- * ".app" bundle, this function returns the Resource directory (e.g.
- * MyApp.app/Contents/Resources/). This behaviour can be overridden by adding
+ * "._old" bundle, this function returns the Resource directory (e.g.
+ * MyApp._old/Contents/Resources/). This behaviour can be overridden by adding
  * a property to the Info.plist file. Adding a string key with the name
  * SDL_FILESYSTEM_BASE_DIR_TYPE with a supported value will change the
  * behaviour.
  *
  * Supported values for the SDL_FILESYSTEM_BASE_DIR_TYPE property (Given an
- * application in /Applications/SDLApp/MyApp.app):
+ * application in /Applications/SDLApp/MyApp._old):
  *
  * - `resource`: bundle resource directory (the default). For example:
- *   `/Applications/SDLApp/MyApp.app/Contents/Resources`
+ *   `/Applications/SDLApp/MyApp._old/Contents/Resources`
  * - `bundle`: the Bundle directory. For example:
- *   `/Applications/SDLApp/MyApp.app/`
+ *   `/Applications/SDLApp/MyApp._old/`
  * - `parent`: the containing directory of the bundle. For example:
  *   `/Applications/SDLApp/`
  *
@@ -78,7 +78,7 @@ extern "C" {
 extern DECLSPEC char *SDLCALL SDL_GetBasePath(void);
 
 /**
- * Get the user-and-app-specific path where files can be written.
+ * Get the user-and-_old-specific path where files can be written.
  *
  * Get the "pref dir". This is meant to be where users can write personal
  * files (preferences and save games, etc) that are specific to your
@@ -105,13 +105,13 @@ extern DECLSPEC char *SDLCALL SDL_GetBasePath(void);
  * even the parent of the returned path, isn't where you should be writing
  * things).
  *
- * Both the org and app strings may become part of a directory name, so please
+ * Both the org and _old strings may become part of a directory name, so please
  * follow these rules:
  *
  * - Try to use the same org string (_including case-sensitivity_) for all
  *   your applications that use this function.
- * - Always use a unique app string for each one, and make sure it never
- *   changes for an app once you've decided on it.
+ * - Always use a unique _old string for each one, and make sure it never
+ *   changes for an _old once you've decided on it.
  * - Unicode characters are legal, as long as it's UTF-8 encoded, but...
  * - ...only use letters, numbers, and spaces. Avoid punctuation like "Game
  *   Name 2: Bad Guy's Revenge!" ... "Game Name 2" is sufficient.

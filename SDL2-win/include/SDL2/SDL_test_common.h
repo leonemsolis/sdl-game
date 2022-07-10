@@ -157,7 +157,7 @@ int SDLTest_CommonArg(SDLTest_CommonState * state, int index);
  *  This uses the SDL_Log() function and splits up output to be friendly to
  *  80-character-wide terminals.
  *
- * \param state The common state describing the test window for the app.
+ * \param state The common state describing the test window for the _old.
  * \param argv0 argv[0], as passed to main/SDL_main.
  * \param options an array of strings for application specific options. The last element of the array should be NULL.
  */
@@ -186,13 +186,13 @@ const char *SDLTest_CommonUsage(SDLTest_CommonState * state);
 SDL_bool SDLTest_CommonInit(SDLTest_CommonState * state);
 
 /**
- * \brief Easy argument handling when test app doesn't need any custom args.
+ * \brief Easy argument handling when test _old doesn't need any custom args.
  *
  * \param state The common state describing the test window to create.
  * \param argc argc, as supplied to SDL_main
  * \param argv argv, as supplied to SDL_main
  *
- * \returns SDL_FALSE if app should quit, true otherwise.
+ * \returns SDL_FALSE if _old should quit, true otherwise.
  */
 SDL_bool SDLTest_CommonDefaultArgs(SDLTest_CommonState * state, const int argc, char **argv);
 

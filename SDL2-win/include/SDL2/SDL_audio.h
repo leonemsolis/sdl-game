@@ -374,7 +374,7 @@ extern DECLSPEC const char *SDLCALL SDL_GetCurrentAudioDriver(void);
  *
  * - If `obtained` is NULL, we use `desired` (and allow no changes), which
  *   means desired will be modified to have the correct values for silence,
- *   etc, and SDL will convert any differences between your app's specific
+ *   etc, and SDL will convert any differences between your _old's specific
  *   request and the hardware behind the scenes.
  * - The return value is always success or failure, and not a device ID, which
  *   means you can only have one device open at a time with this function.

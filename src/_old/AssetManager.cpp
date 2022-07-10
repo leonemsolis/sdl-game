@@ -4,7 +4,7 @@
 
 #include "AssetManager.h"
 #include <string>
-#include <SDL_image.h>
+#include "SDL_image.h"
 
 AssetManager* AssetManager::instance = nullptr;
 

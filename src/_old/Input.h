@@ -5,8 +5,8 @@
 #ifndef SDL_APP_INPUT_H
 #define SDL_APP_INPUT_H
 
-#include <SDL.h>
-#include <glm/vec2.hpp>
+#include "SDL.h"
+#include "glm/vec2.hpp"
 
 enum InputEventTypes {
     QUIT = 0,

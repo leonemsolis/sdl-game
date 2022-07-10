@@ -1,8 +1,8 @@
 #ifndef SDL_APP_GAME_H
 #define SDL_APP_GAME_H
 
-#include <SDL.h>
-#include <SDL_image.h>
+#include "SDL.h"
+#include "SDL_image.h"
 #include "Scene.h"
 
 class Game {

@@ -48,7 +48,7 @@ extern "C" {
  *
  * What happens when you open a URL varies wildly as well: your game window
  * may lose focus (and may or may not lose focus if your game was fullscreen
- * or grabbing input at the time). On mobile devices, your app will likely
+ * or grabbing input at the time). On mobile devices, your _old will likely
  * move to the background or your process might be paused. Any given platform
  * may or may not handle a given URL.
  *

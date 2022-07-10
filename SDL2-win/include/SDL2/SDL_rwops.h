@@ -196,7 +196,7 @@ typedef struct SDL_RWops
  * format, regardless of the underlying operating system.
  *
  * As a fallback, SDL_RWFromFile() will transparently open a matching filename
- * in an Android app's `assets`.
+ * in an Android _old's `assets`.
  *
  * Closing the SDL_RWops will close the file handle SDL is holding internally.
  *
