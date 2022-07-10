@@ -21,7 +21,7 @@ IF(MINGW)
     set(OTHER_LIBS ${PROJECT_SOURCE_DIR}/lib)
     include_directories(${PROJECT_SOURCE_DIR}/src/headers ${SDL2_INCLUDE_DIR} ${OTHER_LIBS})
     link_directories(${SDL2_LIB_DIR})
-    add_executable(sdl_app src/sources/main.cpp src/sources/graphics.cpp src/headers/game.h src/sources/game.cpp src/headers/input.h src/sources/input.cpp)
+    add_executable(sdl_app src/sources/main.cpp src/sources/graphics.cpp src/headers/game.h src/sources/game.cpp src/headers/input.h src/sources/input.cpp src/headers/sprite.h src/sources/sprite.cpp src/headers/globals.h)
     target_link_libraries(${PROJECT_NAME} mingw32 SDL2main SDL2 SDL2_image)
 ENDIF()
 
