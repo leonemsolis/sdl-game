@@ -5,7 +5,7 @@
 #ifndef SDL_APP_GAME_H
 #define SDL_APP_GAME_H
 
-#include "sprite.h"
+#include "animatedsprite.h"
 
 class Graphics;
 
@@ -18,7 +18,7 @@ private:
     void draw(Graphics &graphics);
     void update(float elapsedTime);
 
-    Sprite _player;
+    AnimatedSprite _player;
 };
 
 #endif //SDL_APP_GAME_H
